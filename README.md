@@ -35,17 +35,19 @@ with the `Response` object is up to you.
 
 ### Response::jsend($data, $httpStatus, $headers)
 
-Simply a wrapper around Response::json(). The response will be sent as JSONP if a 'callback' 
+Wrapper around Response::json(). The response will be sent as JSONP if a 'callback' 
 value is specified in the request input.
 
 It's not especially useful to call this by itself, as it will not format the data whatsoever.
-However, all other JSend4Laravel methods ultimate route through this.
+However, all other JSend4Laravel methods ultimate route through this, which then returns
+a jsonResponse.
 
 * `$data`:       Data to include in the response, defaults to NULL.
 * `$httpStatus`: HTTP status code for the response, defaults to 200.
 * `$headers`:    Response headers for the response. JSON responses are always sent
                  with Content-Type: application/json
 
+Returns: `Response`
 
 ### Response::jsendSuccess($data, $httpStatus, $headers)
 
@@ -56,6 +58,7 @@ optional.
 * `$httpStatus`: HTTP status code for the response, defaults to 200.
 * `$headers`:    Response headers for the response.
 
+Returns: `Response`
 
 ### Response::jsendFail($data, $httpStatus, $headers)
 
@@ -65,10 +68,11 @@ Formats a JSend **fail** response. All parameters are optional.
 * `$httpStatus`: HTTP status code for the response, defaults to 400.
 * `$headers`:    Response headers for the response.
 
+Returns: `Response`
 
 ### Response::jsendError($message, $code, $data, $httpStatus, $headers)
 
-Formats a JSend error response with the supplied data.
+Formats a JSend **error** response with the supplied data.
 
 * `$message`: **Required**. A meangingful, human-readable message explaining the error.
 
@@ -79,3 +83,5 @@ All other parameters are optional:
                  debug info). Not included in response if set to NULL (default).
 * `$httpStatus`: HTTP status code for the response, defaults to 400.
 * `$headers`:    Response headers for the response.
+
+Returns: `Response`
