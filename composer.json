@@ -1,0 +1,24 @@
+{
+    "name": "vena/jsend4laravel",
+    "description": "A simple JSend extension to the Illuminate Request class",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Vena",
+            "email": "d+packagedev@vena.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "2.2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Vena\\JSend4Laravel\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
