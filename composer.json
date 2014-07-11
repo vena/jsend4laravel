@@ -1,6 +1,6 @@
 {
     "name": "vena/jsend4laravel",
-    "description": "A simple JSend extension to the Illuminate Request class",
+    "description": "Simply adds macros to Laravel 4's Response class for JSend-formatting responses.",
     "license": "MIT",
     "authors": [
         {
